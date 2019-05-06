@@ -1,10 +1,15 @@
 <template>
-  <button>Start</button>
+  <button @click="next">Start</button>
 </template>
 
 <script>
 export default {
-  name: "StartButton"
+  name: "StartButton",
+  methods: {
+    next: function() {
+      this.$emit("Start");
+    }
+  }
 };
 </script>
 

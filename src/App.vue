@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="./assets/Slemp_Logo.png" v-if="start">
+    <img alt="Vue logo" src="./assets/Slemp_Logo.png" v-else class="logo">
 
-    <start-button v-if="start"/>
+    <start-button v-if="start" v-on:Start="start = false;"/>
   </div>
 </template>
 
