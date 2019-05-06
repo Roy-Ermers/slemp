@@ -1,14 +1,21 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+
+    <start-button v-if="start"/>
   </div>
 </template>
 
 <script>
-
+import startButton from "./components/startButton";
 export default {
   name: "app",
-  components: {}
+  components: {
+    startButton
+  },
+  data: () => {
+    return { start: true };
+  }
 };
 </script>
 
