@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/Slemp_Logo.png" v-if="start" class="header">
-    <img alt="Vue logo" src="./assets/Slemp_Logo.png" v-else class="logo">
+    <img alt="Vue logo" src="./assets/Slemp_Logo.png" v-else class="logo" @click="start = true">
 
     <start-button v-if="start" v-on:Start="start = false;"/>
     <name-form v-if="!start"/>
@@ -39,6 +39,14 @@ body {
   left: 0px;
   top: 0px;
   width: 15em;
-  height: 8em;
+}
+.logo:hover {
+  cursor: pointer;
+}
+.header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40em;
 }
 </style>

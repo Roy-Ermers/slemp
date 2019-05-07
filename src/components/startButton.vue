@@ -29,7 +29,7 @@ button {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 300px;
+  margin-top: 80px;
 }
 button:hover {
   background-color: RGBA(0, 0, 0, 0.5);

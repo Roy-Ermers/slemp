@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="formcontainer">
     <div :key="name" v-for="(name,i) in names" class="name">
       <input type="text" v-model.lazy="names[i]" :id="name">
     </div>
@@ -14,3 +14,7 @@ export default {
   }
 };
 </script>
+<style>
+.formcontainer {
+}
+</style>
