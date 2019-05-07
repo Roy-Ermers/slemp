@@ -2,15 +2,13 @@
   <div class="formcontainer">
     <h1>Voer de deelnemers in:</h1>
     <hr>
-    <div :key="name" v-for="(name,i) in names" class="name">
-      <input type="text" placeholder="Naam.." v-model.lazy="names[i]" :id="name">
+    <div class="container">
+      <div :key="name" v-for="(name,i) in names" class="name">
+        <input type="text" placeholder="Naam.." v-model.lazy="names[i]" :id="name">
+      </div>
+      <button @click="names.push('');" class="addbtn">+</button>
     </div>
-<<<<<<< HEAD
-    <button @click="names.push('');">+</button>
-=======
-    <button @click="names.push('');">Add</button>
-    <button @click="submit">volgende</button>
->>>>>>> 1be7df0d056f867e4760311182d1c84ffa18ccf8
+    <button @click="submit" class="nextbtn">Volgende</button>
   </div>
 </template>
 <script>
@@ -37,7 +35,6 @@ hr {
   width: 80px;
 }
 .formcontainer {
-  margin-top: -150px;
   position: relative;
 }
 input {
@@ -51,7 +48,7 @@ input {
   margin-left: 20px;
   box-shadow: 0 3px 6px RGBA(0, 0, 0, 16%);
 }
-button {
+.addbtn {
   border-radius: 100%;
   border: 1px solid #248b00;
   background-color: #248b00;
@@ -70,5 +67,37 @@ button {
   text-align: center;
   cursor: pointer;
   padding-left: 5px;
+}
+.nextbtn {
+  font-family: "Poppins", sans-serif;
+  background-color: RGBA(0, 0, 0, 0.25);
+  border-bottom-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border: 0;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 17px;
+  text-decoration: none;
+  width: 175px;
+  height: 50px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 80px;
+  font-style: italic;
+}
+.nextbtn:hover {
+  background-color: RGBA(0, 0, 0, 0.5);
+}
+.container {
+  height: 35vh;
+  overflow-y: auto;
+}
+::-webkit-scrollbar {
+  background-color: #00e62e;
+  border: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: RGBA(0, 0, 0, 0.25);
+  border-radius: 1em;
 }
 </style>

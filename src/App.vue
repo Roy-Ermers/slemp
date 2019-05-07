@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-    <img alt="Vue logo" src="./assets/Slemp_Logo.png" v-if="start" class="header">
-    <img alt="Vue logo" src="./assets/Slemp_Logo.png" v-else class="logo" @click="start = true">
-=======
     <transition name="slide-fade" mode="out-in">
       <img key="header" alt="Vue logo" src="./assets/Slemp_Logo.png" v-if="start" class="header">
       <img
@@ -15,7 +11,6 @@
         @click="start = true"
       >
     </transition>
->>>>>>> 1be7df0d056f867e4760311182d1c84ffa18ccf8
     <start-button v-if="start" v-on:Start="start = false;"/>
     <name-form v-if="!start&&names.length==0" v-on:Names="SetNames"/>
 
@@ -76,10 +71,6 @@ body {
   margin-right: auto;
   width: 40em;
 }
-<<<<<<< HEAD
-.header::after {
-  content: "&copy;";
-=======
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
@@ -92,6 +83,5 @@ body {
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
->>>>>>> 1be7df0d056f867e4760311182d1c84ffa18ccf8
 }
 </style>
