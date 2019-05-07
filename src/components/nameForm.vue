@@ -5,7 +5,12 @@
     <div :key="name" v-for="(name,i) in names" class="name">
       <input type="text" placeholder="Naam.." v-model.lazy="names[i]" :id="name">
     </div>
+<<<<<<< HEAD
     <button @click="names.push('');">+</button>
+=======
+    <button @click="names.push('');">Add</button>
+    <button @click="submit">volgende</button>
+>>>>>>> 1be7df0d056f867e4760311182d1c84ffa18ccf8
   </div>
 </template>
 <script>
@@ -13,6 +18,11 @@ export default {
   name: "nameForm",
   data: () => {
     return { names: [""] };
+  },
+  methods: {
+    submit: function() {
+      this.$emit("Names", this.names);
+    }
   }
 };
 </script>
