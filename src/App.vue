@@ -11,10 +11,11 @@
         @click="start = true"
       >
     </transition>
-    <start-button v-if="start" v-on:Start="start = false;"/>
+    <transition name="slide-fade" mode="out-in">
+      <start-button v-if="start" v-on:Start="start = false;"/>
+    </transition>
     <name-form v-if="!start&&names.length==0" v-on:Names="SetNames"/>
-
-    <transition-group name="slide-fade" tag="ul">
+    <transition-group v-if="!start" name="slide-fade" tag="ul">
       <li v-for="name in names" :key="name">{{name}}</li>
     </transition-group>
   </div>
@@ -42,8 +43,12 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+  outline: none;
+}
 body {
   background-color: #00e62e;
+  overflow: hidden;
 }
 #app {
   display: flex;
@@ -74,14 +79,28 @@ body {
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: transform 0.3s cubic-bezier(1, 0.5, 0.8, 1),
+    opacity 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
+}
+@media screen and (max-width: 812px) {
+  .header {
+    pointer-events: none;
+    padding: 2em;
+    max-height: calc(100% - 50px);
+    width: 100%;
+    box-sizing: border-box;
+    object-fit: contain;
+  }
+  .logo {
+    display: none;
+  }
 }
 </style>

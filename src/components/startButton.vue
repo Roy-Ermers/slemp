@@ -30,6 +30,7 @@ button {
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
+  transition: background-color 100ms ease-in-out;
 }
 button:hover {
   background-color: RGBA(0, 0, 0, 0.5);
@@ -37,6 +38,15 @@ button:hover {
 button:active {
   position: relative;
   top: 1px;
+}
+@media screen and (max-width: 812px) {
+  button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+  }
 }
 </style>
 
