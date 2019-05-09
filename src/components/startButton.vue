@@ -30,6 +30,7 @@ button {
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
+  outline: none;
 }
 button:hover {
   background-color: RGBA(0, 0, 0, 0.5);
