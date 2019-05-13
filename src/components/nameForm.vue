@@ -25,6 +25,12 @@ export default {
 };
 </script>
 <style scoped>
+.formcontainer {
+  transform: translateZ(-1400px);
+  opacity: 0;
+  animation: slide-in-fwd-center 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both 0.35s;
+}
 h1 {
   color: white;
 }
@@ -105,5 +111,15 @@ input {
   background-color: RGBA(0, 0, 0, 0.25);
   border-radius: 1em;
   outline: none;
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }
 </style>
