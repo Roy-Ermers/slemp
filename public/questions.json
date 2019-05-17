@@ -18,12 +18,11 @@
 			"text": "{person1} mag een vraag stellen aan {person2}, als {person2} weigert te antwoorden moet hij 5 slokken nemen."
 		},
 		{
-			"text": "De persoon die als eerst zijn mobiel pakt moet een atje.",
-			"type": "FirstTo"
+			"text": "De persoon die als eerst zijn mobiel pakt moet een atje doen."
 		},
 		{
-			"text": "Iedereen krijgt {time} sec om zijn bier te atten, lukt het niet drink 3 slokken, begin je er niet aan 5 slokken drinken.",
-			"time": 20,
+			"text": "{person} krijgt {time} sec om zijn bier te atten, lukt het niet drink 3 slokken, begin je er niet aan moet je 5 slokken drinken.",
+			"timer": 20,
 			"type": "timer"
 		}
 	]

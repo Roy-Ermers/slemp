@@ -36,10 +36,6 @@ button {
 button:hover {
   background-color: RGBA(0, 0, 0, 0.5);
 }
-button:active {
-  position: relative;
-  top: 1px;
-}
 @media screen and (max-width: 812px) {
   button {
     position: fixed;
