@@ -1,0 +1,30 @@
+{
+	"keys": {
+		"color": [
+			"blauw",
+			"rood",
+			"geel",
+			"zwart",
+			"wit",
+			"groen",
+			"bruin"
+		]
+	},
+	"questions": [
+		{
+			"text": "Iedereen die iets {color}s aan heeft neemt 2 slokken."
+		},
+		{
+			"text": "{person1} mag een vraag stellen aan {person2}, als {person2} weigert te antwoorden moet hij 5 slokken nemen."
+		},
+		{
+			"text": "De persoon die als eerst zijn mobiel pakt moet een atje.",
+			"type": "FirstTo"
+		},
+		{
+			"text": "Iedereen krijgt {time} sec om zijn bier te atten, lukt het niet drink 3 slokken, begin je er niet aan 5 slokken drinken.",
+			"time": 20,
+			"type": "timer"
+		}
+	]
+}

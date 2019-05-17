@@ -15,20 +15,20 @@
       <start-button v-if="start" v-on:Start="start = false;"/>
     </transition>
     <name-form v-if="!start&&names.length==0" v-on:Names="SetNames"/>
-    <transition-group v-if="!start" name="slide-fade" tag="ul">
-      <li v-for="name in names" :key="name">{{name}}</li>
-    </transition-group>
+    <question v-if="!start&&names.length>0"/>
   </div>
 </template>
 
 <script>
 import startButton from "./components/startButton";
 import nameForm from "./components/nameForm";
+import question from "./components/Question";
 export default {
   name: "app",
   components: {
     startButton,
-    nameForm
+    nameForm,
+    question
   },
   data: () => {
     return { start: true, names: [] };
