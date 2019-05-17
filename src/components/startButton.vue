@@ -30,6 +30,7 @@ button {
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
+  outline: none;
   transition: background-color 100ms ease-in-out;
 }
 button:hover {

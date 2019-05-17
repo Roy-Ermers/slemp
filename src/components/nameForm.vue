@@ -53,6 +53,7 @@ input {
   margin: 5px;
   margin-left: 20px;
   box-shadow: 0 3px 6px RGBA(0, 0, 0, 16%);
+  outline: none;
 }
 .addbtn {
   border-radius: 100%;
@@ -73,6 +74,7 @@ input {
   text-align: center;
   cursor: pointer;
   padding-left: 5px;
+  outline: none;
 }
 .nextbtn {
   font-family: "Poppins", sans-serif;
@@ -90,6 +92,7 @@ input {
   display: block;
   margin-top: 80px;
   font-style: italic;
+  outline: none;
 }
 .nextbtn:hover {
   background-color: RGBA(0, 0, 0, 0.5);
@@ -101,10 +104,13 @@ input {
 ::-webkit-scrollbar {
   background-color: #00e62e;
   border: 0px;
+  width: 0.25em;
+  outline: none;
 }
 ::-webkit-scrollbar-thumb {
   background-color: RGBA(0, 0, 0, 0.25);
   border-radius: 1em;
+  outline: none;
 }
 @keyframes slide-in-fwd-center {
   0% {

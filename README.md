@@ -72,12 +72,13 @@ Neem het aantal slokken als het aantal paar schoenen die je hebt!
 
 `Iedereen krijgt 20 sec om zijn bier te atten, lukt het niet drink 3 slokken, begin je er niet aan 5 slokken drinken.`
 
->{persoon} is de baas! Hij mag bepalen wie er een fitness oefening moet doen voor 5 seconde
+>{persoon} is de baas! Hij mag bepalen wie er een fitness oefening moet doen voor 30 seconde
 
 >{persoon} is niet meer de baas!
 
 {persoon} ren rond als een gekke kalkoen of drink 4 slokken.
 
+>{persoon} belt het laatst gebelde nummer.
 
 
 
