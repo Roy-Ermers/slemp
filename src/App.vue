@@ -1,34 +1,30 @@
 <template>
   <div id="app">
-    <transition name="slide-fade" mode="out-in">
-      <img key="header" alt="Vue logo" src="./assets/Slemp_Logo.png" v-if="start" class="header">
-      <img
-        key="logo"
-        alt="Vue logo"
-        src="./assets/Slemp_Logo.png"
-        v-else
-        class="logo"
-        @click="start = true"
-      >
-    </transition>
-    <transition name="slide-fade" mode="out-in">
-      <start-button v-if="start" v-on:Start="start = false;"/>
-    </transition>
+    <img key="header" alt="Vue logo" src="./assets/Slemp_Logo.png" v-if="start" class="header">
+    <img
+      key="logo"
+      alt="Vue logo"
+      src="./assets/Slemp_Logo.png"
+      v-else
+      class="logo"
+      @click="start = true"
+    >
+    <start-button v-if="start" @Start="start = false"/>
     <name-form v-if="!start&&names.length==0" v-on:Names="SetNames"/>
-    <transition-group v-if="!start" name="slide-fade" tag="ul">
-      <li v-for="name in names" :key="name">{{name}}</li>
-    </transition-group>
+    <question v-if="!start&&names.length>0" :names="names"/>
   </div>
 </template>
 
 <script>
 import startButton from "./components/startButton";
 import nameForm from "./components/nameForm";
+import question from "./components/Question";
 export default {
   name: "app",
   components: {
     startButton,
-    nameForm
+    nameForm,
+    question
   },
   data: () => {
     return { start: true, names: [] };
@@ -37,6 +33,12 @@ export default {
     SetNames: function(names) {
       this.names = names;
     }
+  },
+  mounted: function() {
+    window.addEventListener("beforeinstallprompt", e => {
+      e.preventDefault();
+      e.prompt();
+    });
   }
 };
 </script>
@@ -63,9 +65,11 @@ body {
 }
 .logo {
   position: fixed;
-  left: 0px;
+  left: 1em;
   top: 0px;
   width: 15em;
+  opacity: 0.5;
+  filter: brightness(15%);
 }
 .logo:hover {
   cursor: pointer;
@@ -90,17 +94,32 @@ body {
   transform: translateX(10px);
   opacity: 0;
 }
+.questions {
+  flex: 1;
+}
 @media screen and (max-width: 812px) {
+  #app {
+    justify-content: flex-start;
+  }
   .header {
     pointer-events: none;
     padding: 2em;
-    max-height: calc(100% - 50px);
-    width: 100%;
+    max-height: calc(100% - 100px);
+    max-width: calc(100% - 100px);
     box-sizing: border-box;
     object-fit: contain;
   }
   .logo {
+    pointer-events: none;
     display: none;
+  }
+  .slide-fade-enter-active,
+  .slide-fade-leave-active,
+  .slide-fade-enter,
+  .slide-fade-leave-to {
+    transition-duration: 1ms;
+    transform: initial;
+    opacity: 1;
   }
 }
 </style>

@@ -4,22 +4,41 @@
     <hr>
     <div class="container">
       <div :key="name" v-for="(name,i) in names" class="name">
-        <input type="text" placeholder="Naam.." v-model.lazy="names[i]" :id="name">
+        <input type="text" placeholder="Naam" v-model.lazy="names[i]" :id="name">
       </div>
-      <button @click="names.push('');" class="addbtn">+</button>
+      <input
+        type="text"
+        placeholder="Nieuw lid toevoegen"
+        class="new"
+        @keyup="addNewName"
+        @blur="addNewName"
+      >
     </div>
-    <button @click="submit" class="nextbtn">Volgende</button>
+    <button
+      @click="submit"
+      class="nextbtn"
+      :disabled="names.length<2 && names.includes('')"
+    >Volgende</button>
   </div>
 </template>
 <script>
 export default {
   name: "nameForm",
   data: () => {
-    return { names: [""] };
+    return { names: [] };
   },
   methods: {
     submit: function() {
       this.$emit("Names", this.names);
+    },
+    addNewName(ev) {
+      if (
+        ev.keyCode == 13 ||
+        (ev instanceof FocusEvent && ev.target.value != "")
+      ) {
+        this.names.push(ev.target.value);
+        ev.target.value = "";
+      }
     }
   }
 };
@@ -54,6 +73,9 @@ input {
   margin-left: 20px;
   box-shadow: 0 3px 6px RGBA(0, 0, 0, 16%);
   outline: none;
+}
+input[type="text"].new {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .addbtn {
   border-radius: 100%;
@@ -93,8 +115,13 @@ input {
   margin-top: 80px;
   font-style: italic;
   outline: none;
+  transition: background-color 250ms ease-in-out;
 }
-.nextbtn:hover {
+.nextbtn:disabled {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.nextbtn:hover:not(:disabled) {
   background-color: RGBA(0, 0, 0, 0.5);
 }
 .container {
@@ -121,5 +148,7 @@ input {
     transform: translateZ(0);
     opacity: 1;
   }
+}
+@media screen and (max-width: 812px) {
 }
 </style>
