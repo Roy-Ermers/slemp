@@ -78,7 +78,11 @@ Neem het aantal slokken als het aantal paar schoenen die je hebt!
 
 {persoon} ren rond als een gekke kalkoen of drink 4 slokken.
 
->{persoon} belt het laatst gebelde nummer.
+>{persoon} belt het laatst gebelde nummer van zijn telefoon of drinkt 3 slokken.
+
+`{persoon} zing een lied voor 30 seconde of drink 5 slokken.`
+
+
 
 
 

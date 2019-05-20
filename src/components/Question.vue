@@ -1,4 +1,10 @@
 <template>
-	
+  <div class="qcontainer">
+    <h1 id="question"></h1>
+  </div>
 </template>
-script
+<script>
+export default {
+  name: "Question"
+};
+</script>
