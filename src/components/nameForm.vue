@@ -150,5 +150,13 @@ input[type="text"].new {
   }
 }
 @media screen and (max-width: 812px) {
+  .nextbtn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+  }
 }
 </style>

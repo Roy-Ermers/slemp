@@ -29,8 +29,8 @@
 }
 .timer {
   position: relative;
-  width: 5em;
-  height: 5em;
+  width: 10em;
+  height: 10em;
 }
 .done {
   animation: flicker 500ms ease infinite;
@@ -61,11 +61,11 @@
   bottom: 0;
   left: 0;
   right: 0;
-  font-size: 3em;
+  font-size: 5em;
   color: #fff;
   margin: 0;
   text-align: center;
-  line-height: 1.666em;
+  line-height: 2em;
   font-family: "poppins";
   font-weight: 300;
   mix-blend-mode: screen;
@@ -174,7 +174,7 @@ export default {
         Math.floor(this.database.questions.length * Math.random())
       ];
       this.currentQuestion = q;
-
+      startTime = undefined;
       if (q.timer) {
         this.time = q.timer;
       } else this.time = undefined;
