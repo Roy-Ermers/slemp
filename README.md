@@ -26,9 +26,7 @@ Alle jongens nemen een slok.
 
 Alle meisjes nemen een slok.
 
-Iedereen die de afgelopen maand is uitgegaan mag 4 slokken uitdelen.
-
-Degene die al is heeft moeten overgeven van alcohol mag 3 slokken uitdelen.
+Degene die al is heeft moeten overgeven van alcohol, drinkt 2 slokken.
 
 Ieder persoon verteld om de beurt wat diegene nog nooit heeft gedaan, degene die het wel heeft gedaan, neemt een slok.
 
@@ -38,7 +36,7 @@ Ieder persoon verteld om de beurt wat diegene nog nooit heeft gedaan, degene die
 
 {persoon} zet een timer op 5 minuten, wanneer het alarm afgaat tikt iedereen zo snel mogelijk de grond, de laatste speler die de grond aan tikt mag zijn glas leegdrinken.
 
-Iedere speler die jonger is dan 18 mag 5 slokken nemen.
+Iedere speler die jonger is dan 18 mag 2 slokken nemen.
 
 Iedere speler die al eens iets illegaals heeft gedaan mag 1 slok nemen.
 
@@ -76,7 +74,7 @@ Neem het aantal slokken als het aantal paar schoenen die je hebt!
 
 >{persoon} is niet meer de baas!
 
-{persoon} ren rond als een gekke kalkoen of drink 4 slokken.
+{persoon} ren rond als een gekke kalkoen of drink 3 slokken.
 
 >{persoon} belt het laatst gebelde nummer van zijn telefoon of drinkt 3 slokken.
 

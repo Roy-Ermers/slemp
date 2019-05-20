@@ -14,16 +14,18 @@
 .question {
   color: white;
   font-family: "poppins";
-  font-size: 72px;
+  font-size: 62px;
   text-align: center;
   padding: 0 2em;
   pointer-events: none;
+  user-select: none;
 }
 .questions {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  user-select: none;
 }
 .timer {
   position: relative;
@@ -114,11 +116,8 @@ export default {
               name = this.names[Math.floor(this.names.length * Math.random())];
               if (tries++ >= this.names.length * 2) {
                 throw new Error("absolutely no name can be found.");
-                break;
               }
             }
-
-            console.log(person, name);
             text = text.replace(person, name);
             persons[person] = name;
           }
@@ -134,12 +133,10 @@ export default {
             text = text.replace(key, keys[name]);
           } else {
             let list = this.database.keys[name];
-            console.log(list);
             if (!list || key == "time") {
               text = text.replace(key, this.currentQuestion.timer);
             } else {
               keys[name] = list[Math.floor(list.length * Math.random())];
-              console.log("key = " + keys[name]);
               text = text.replace(key, keys[name]);
             }
           }

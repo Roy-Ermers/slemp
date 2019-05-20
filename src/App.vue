@@ -51,6 +51,7 @@ export default {
 body {
   background-color: #00e62e;
   overflow: hidden;
+  margin: 0;
 }
 #app {
   display: flex;
@@ -61,7 +62,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  height: 97vh;
+  height: 100vh;
 }
 .logo {
   position: fixed;
