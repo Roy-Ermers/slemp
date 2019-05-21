@@ -54,6 +54,7 @@ export default {
         });
     }
     window.addEventListener("beforeinstallprompt", e => {
+      console.log("We can install this app.");
       e.preventDefault();
       this.installPrompt = e;
     });
