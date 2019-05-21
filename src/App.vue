@@ -68,6 +68,7 @@ export default {
 }
 body {
   background-color: #00e62e;
+  background: #00e62e repeating-conic-gradient(#00e62e 0 15deg, #00df2d 0 30deg);
   overflow: hidden;
   margin: 0;
 }
