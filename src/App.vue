@@ -73,6 +73,7 @@ body {
   overflow: hidden;
   margin: 0;
 }
+
 #app {
   display: flex;
   justify-content: center;
@@ -126,10 +127,9 @@ body {
   width: 75vw;
   line-height: 2em;
   left: 12.5vw;
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   padding: 0.2em 1em;
-  padding-right: 0;
   box-sizing: border-box;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
