@@ -13,7 +13,7 @@
       Wil je de slemp app installeren?
       <button
         class="primary"
-        @click="()=>installPrompt.prompt()"
+        @click="()=>{installPrompt.prompt(); installPrompt = undefined;}"
       >installeer</button>
       <button @click="installPrompt = undefined;">nee dankje</button>
     </div>

@@ -49,6 +49,7 @@ export default {
   opacity: 0;
   animation: slide-in-fwd-center 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
     both 0.35s;
+  text-align: center;
 }
 h1 {
   color: white;
@@ -152,11 +153,12 @@ input[type="text"].new {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 100vw;
     border-radius: 0;
   }
   .formcontainer {
     height: 100vh;
+    width: 100vw;
     margin-top: 5em;
   }
   .container {
