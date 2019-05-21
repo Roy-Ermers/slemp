@@ -9,6 +9,14 @@
       class="logo"
       @click="start = true"
     >
+    <div class="install-prompt" :class="{show: installPrompt}">
+      Wil je de slemp app installeren?
+      <button
+        class="primary"
+        @click="()=>installPrompt.prompt()"
+      >installeer</button>
+      <button @click="installPrompt = undefined;">nee dankje</button>
+    </div>
     <start-button v-if="start" @Start="start = false"/>
     <name-form v-if="!start&&names.length==0" v-on:Names="SetNames"/>
     <question v-if="!start&&names.length>0" :names="names"/>
@@ -27,7 +35,7 @@ export default {
     question
   },
   data: () => {
-    return { start: true, names: [] };
+    return { start: true, names: [], installPrompt: undefined };
   },
   methods: {
     SetNames: function(names) {
@@ -47,7 +55,7 @@ export default {
     }
     window.addEventListener("beforeinstallprompt", e => {
       e.preventDefault();
-      e.prompt();
+      this.installPrompt = e;
     });
   }
 };
@@ -108,6 +116,46 @@ body {
 .questions {
   flex: 1;
 }
+.install-prompt {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  position: fixed;
+  top: -5em;
+  width: 75vw;
+  line-height: 2em;
+  left: 12.5vw;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.2em 1em;
+  padding-right: 0;
+  box-sizing: border-box;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: top 250ms ease-in-out;
+}
+.install-prompt.show {
+  transition-delay: 500ms;
+  top: 0;
+}
+.install-prompt button {
+  background-color: transparent;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  margin: 0.25em;
+  color: #00e62e;
+  font-weight: 700;
+  float: right;
+}
+.install-prompt button.primary {
+  background-color: #00e62e;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  margin: 0.25em;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
 @media screen and (max-width: 812px) {
   #app {
     justify-content: flex-start;
@@ -119,6 +167,7 @@ body {
     max-width: calc(100% - 100px);
     box-sizing: border-box;
     object-fit: contain;
+    margin-top: 15vh;
   }
   .logo {
     pointer-events: none;

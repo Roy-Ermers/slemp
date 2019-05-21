@@ -65,9 +65,6 @@
 			"text": "{person} verteld 2 verschillende verhalen, 1 waarheid en 1 verzonnen, de andere moeten samen raden welk verhaal de waardheid is. Raden ze het goed, moet de verteller 3 slokken nemen, zo niet mag de rest 3 slokken nemen."
 		},
 		{
-			"text": "Alle jongens nemen een slok."
-		},
-		{
 			"text": "Alle meisjes nemen een slok."
 		},
 		{
@@ -127,27 +124,21 @@
 			"type": "timer"
 		},
 		{
-			"text": "{person} is vanaf nu een zombie, wanneer diegene emotie toont moet hij of zij drinken.",
+			"start": "{person} is vanaf nu een zombie, wanneer diegene emotie toont moet hij of zij drinken.",
+			"end": "{person} is geen zombie meer!",
 			"type": "returning"
 		},
 		{
 			"text": "{person} wij zijn benieuwd, laat je buik zien of drink 2 slokken."
 		},
 		{
-			"text": "{person} is geen zombie meer!",
-			"type": "returning"
-		},
-		{
-			"text": "Iedereen krijgt 20 sec om zijn bier te atten, lukt het niet drink 3 slokken, begin je er niet aan 5 slokken drinken.",
+			"text": "{person} krijgt 20 sec om zijn bier te atten, lukt het niet drink 3 slokken, begin je er niet aan 5 slokken drinken.",
 			"timer": 20,
 			"type": "timer"
 		},
 		{
-			"text": "{person} is de baas! Hij mag bepalen wie er een fitness oefening moet doen voor 30 seconde.",
-			"type": "returning"
-		},
-		{
-			"text": "{person} is niet meer de baas.",
+			"start": "{person} is de baas! Hij mag bepalen wie er een fitness oefening moet doen voor 30 seconde.",
+			"end": "{person} is niet meer de baas.",
 			"type": "returning"
 		},
 		{
