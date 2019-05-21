@@ -59,9 +59,6 @@ hr {
   background-color: white;
   width: 80px;
 }
-.formcontainer {
-  position: relative;
-}
 input {
   font-family: "Poppins", sans-serif;
   width: 300px;
@@ -157,6 +154,13 @@ input[type="text"].new {
     right: 0;
     width: 100%;
     border-radius: 0;
+  }
+  .formcontainer {
+    height: 100vh;
+    margin-top: 5em;
+  }
+  .container {
+    margin-top: 3em;
   }
 }
 </style>
