@@ -73,11 +73,11 @@ input {
   outline: none;
 }
 input[type="text"].new {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #80f397;
 }
 .addbtn {
   border-radius: 100%;
-  border: 1px solid #248b00;
+  border: none;
   background-color: #248b00;
   color: white;
   margin-left: auto;
@@ -98,7 +98,7 @@ input[type="text"].new {
 }
 .nextbtn {
   font-family: "Poppins", sans-serif;
-  background-color: RGBA(0, 0, 0, 0.25);
+  background-color: #00ac22;
   border-bottom-left-radius: 25px;
   border-top-right-radius: 25px;
   border: 0;
@@ -120,7 +120,7 @@ input[type="text"].new {
   cursor: pointer;
 }
 .nextbtn:hover:not(:disabled) {
-  background-color: RGBA(0, 0, 0, 0.5);
+  background-color: #00ac22;
 }
 .container {
   height: 35vh;

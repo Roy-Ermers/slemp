@@ -1,6 +1,6 @@
 {
-	"name": "slemp",
-	"short_name": "slemp",
+	"name": "Slemp",
+	"short_name": "Slemp",
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",

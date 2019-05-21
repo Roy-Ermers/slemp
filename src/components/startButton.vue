@@ -16,7 +16,7 @@ export default {
 <style scoped>
 button {
   font-family: "Poppins", sans-serif;
-  background-color: RGBA(0, 0, 0, 0.25);
+  background-color: #00ac22;
   border-bottom-left-radius: 25px;
   border-top-right-radius: 25px;
   border: 0;
@@ -34,7 +34,7 @@ button {
   transition: background-color 100ms ease-in-out;
 }
 button:hover {
-  background-color: RGBA(0, 0, 0, 0.5);
+  background-color: #007317;
 }
 @media screen and (max-width: 812px) {
   button {
