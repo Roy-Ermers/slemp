@@ -1,12 +1,20 @@
 <template>
   <div @click="fillQuestion" class="questions" :class="{ done: time<=0}">
-    <p class="question" v-if="questionText">{{questionText}}</p>
-    <div @click.stop="startTimer" v-if="currentQuestion.timer" class="timer">
-      <svg viewBox="-1 -1 2 2" style="transform: rotate(-0.25turn)">
+    <p class="question" v-show="questionText">{{questionText}}</p>
+
+    <div
+      @click.stop="startTimer"
+      v-show="currentQuestion.timer"
+      style="display: none;"
+      class="timer"
+    >
+      <!--visual view of the timer-->
+      <svg viewBox="-1 -1 2 2" style="transform: rotate(-0.25turn); display: none;">
         <path :d="path" fill="#00911D"></path>
         <circle r="1" fill="rgba(0,0,0,.5)"></circle>
       </svg>
-      <p>{{Math.round(this.time)}}</p>
+      <!--textual view of the timer-->
+      <p style="display: none;">{{Math.round(this.time)}}</p>
     </div>
   </div>
 </template>
@@ -16,11 +24,21 @@
   font-family: "poppins";
   font-size: 62px;
   text-align: center;
-  padding: 0 2em;
   pointer-events: none;
   user-select: none;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 1;
+  transform: scale(1) rotate(0);
+  width: 100vw;
+}
+.hide .question {
+  opacity: 0;
+  transform: scale(0) rotate(10deg);
 }
 .questions {
+  padding: 5em;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,6 +49,15 @@
   position: relative;
   width: 10em;
   height: 10em;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-delay: 100ms;
+  transform: scale(1) rotate(0);
+  opacity: 1;
+}
+.hide .timer {
+  transform: scale(0) rotate(25deg);
+  opacity: 0;
 }
 .done {
   animation: flicker 500ms ease infinite;
@@ -70,6 +97,7 @@
   font-weight: 300;
   mix-blend-mode: screen;
 }
+
 @media screen and (max-width: 812px) {
   .question {
     font-size: 2em;
@@ -97,7 +125,8 @@ export default {
     },
     //a really large text parser.
     questionText: function() {
-      let text = this.currentQuestion.text.toString();
+      let text = this.currentQuestion.text;
+      if (!text) return undefined;
       let personsMatches = text.match(/{(person\d*)\}/gi);
 
       //parse persons
@@ -169,15 +198,19 @@ export default {
       ].join(" ");
       return pathData;
     },
-    fillQuestion: function() {
+    fillQuestion: async function() {
+      this.$el.classList.add("hide");
+
+      await timeout(750);
+
       let q = this.database.questions[
         Math.floor(this.database.questions.length * Math.random())
       ];
       this.currentQuestion = q;
       startTime = undefined;
-      if (q.timer) {
-        this.time = q.timer;
-      } else this.time = undefined;
+      this.time = q.timer;
+
+      this.$el.classList.remove("hide");
     }
   },
   mounted: async function() {
@@ -199,4 +232,6 @@ function RenderTimer(time, timer) {
     navigator.vibrate([300, 300, 300, 300, 300, 300, 300, 300, 300]);
   }
 }
+
+const timeout = ms => new Promise(res => setTimeout(res, ms));
 </script>

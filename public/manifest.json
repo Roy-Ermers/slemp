@@ -3,7 +3,7 @@
 	"short_name": "Slemp",
 	"start_url": "/",
 	"scope": "/",
-	"display": "standalone",
+	"display": "fullscreen",
 	"background_color": "#00e62e",
 	"theme_color": "#00e62e",
 	"description": "Het leukste drankspel van Nederland",
@@ -11,7 +11,8 @@
 		{
 			"src": "logo.png",
 			"sizes": "512x512",
-			"type": "image/png"
+			"type": "image/png",
+			"purpose": "maskable"
 		},
 		{
 			"src": "logo.png",

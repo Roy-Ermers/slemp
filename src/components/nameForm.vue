@@ -33,8 +33,8 @@ export default {
     },
     addNewName(ev) {
       if (
-        ev.keyCode == 13 ||
-        (ev instanceof FocusEvent && ev.target.value != "")
+        (ev.keyCode == 13 || ev instanceof FocusEvent) &&
+        ev.target.value != ""
       ) {
         this.names.push(ev.target.value);
         ev.target.value = "";
@@ -71,6 +71,20 @@ input {
   margin-left: 20px;
   box-shadow: 0 3px 6px RGBA(0, 0, 0, 16%);
   outline: none;
+}
+.name {
+  overflow: hidden;
+  animation: reveal 500ms ease-in-out forwards;
+}
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 100px;
+  }
 }
 input[type="text"].new {
   background-color: #80f397;

@@ -1,21 +1,11 @@
 <template>
   <div id="app">
     <img key="header" alt="Vue logo" src="./assets/Slemp_Logo.png" v-if="start" class="header">
-    <img
-      key="logo"
-      alt="Vue logo"
-      src="./assets/Slemp_Logo.png"
-      v-else
-      class="logo"
-      @click="start = true"
-    >
+    <img key="logo" alt="Vue logo" src="./assets/Slemp_Logo.png" v-else class="logo" @click="Reset">
     <div class="install-prompt" :class="{show: installPrompt}">
       Wil je de slemp app installeren?
-      <button
-        class="primary"
-        @click="()=>{installPrompt.prompt(); installPrompt = undefined;}"
-      >installeer</button>
-      <button @click="installPrompt = undefined;">nee dankje</button>
+      <button class="primary" @click="installApp">installeer</button>
+      <button @click="dismisssInstallBanner">nee dankje</button>
     </div>
     <start-button v-if="start" @Start="start = false"/>
     <name-form v-if="!start&&names.length==0" v-on:Names="SetNames"/>
@@ -40,23 +30,29 @@ export default {
   methods: {
     SetNames: function(names) {
       this.names = names;
+    },
+    dismisssInstallBanner() {
+      this.installPrompt = undefined;
+      localStorage.setItem("dismissInstall", true);
+    },
+    installApp() {
+      this.installPrompt.prompt();
+      this.installPrompt = undefined;
+    },
+    Reset() {
+      this.names = [];
+      this.start = true;
     }
   },
   mounted: function() {
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("/service-worker.js")
-        .then(function(registration) {
-          console.log("Registration successful, scope is:", registration.scope);
-        })
-        .catch(function(error) {
-          console.log("Service worker registration failed, error:", error);
-        });
+      navigator.serviceWorker.register("/service-worker.js");
     }
     window.addEventListener("beforeinstallprompt", e => {
-      console.log("We can install this app.");
-      e.preventDefault();
-      this.installPrompt = e;
+      if (!localStorage.getItem("dismissInstall", true)) {
+        e.preventDefault();
+        this.installPrompt = e;
+      }
     });
   }
 };
