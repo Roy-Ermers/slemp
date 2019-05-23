@@ -112,10 +112,10 @@ export default {
   data: function() {
     return {
       currentQuestion: {
-        text: "At je drankje.",
-        timer: 30
+        text: "",
+        timer: undefined
       },
-      time: 30,
+      time: undefined,
       database: {}
     };
   },
