@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './app.vue'
+import App from './App.vue'
 import Home from './Home.vue'
 import Game from './game.vue'
 import VueRouter from 'vue-router';
