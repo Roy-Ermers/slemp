@@ -17,19 +17,24 @@
     <button
       @click="submit"
       class="nextbtn"
-      :disabled="names.length<2 && names.includes('')"
+      :class="{disabled: names.length < 2 || names.includes('')}"
     >Volgende</button>
+    <p class="alerttxt">{{AlertTxt}}</p>
   </div>
 </template>
 <script>
 export default {
   name: "nameForm",
   data: () => {
-    return { names: [] };
+    return { names: [], AlertTxt: "" };
   },
   methods: {
     submit: function() {
-      this.$emit("Names", this.names);
+      if (this.names.length < 2 || this.names.includes("")) {
+        this.AlertTxt = "Voeg minimaal 2 spelers toe";
+      } else {
+        this.$emit("Names", this.names);
+      }
     },
     addNewName(ev) {
       if (
@@ -89,27 +94,6 @@ input {
 input[type="text"].new {
   background-color: #80f397;
 }
-.addbtn {
-  border-radius: 100%;
-  border: none;
-  background-color: #248b00;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 30px;
-  height: 30px;
-  font-weight: 300;
-  position: absolute;
-  right: -30px;
-  bottom: 5px;
-  font-size: 32px;
-  line-height: 30px;
-  text-align: center;
-  cursor: pointer;
-  padding-left: 5px;
-  outline: none;
-}
 .nextbtn {
   font-family: "Poppins", sans-serif;
   background-color: #00ac22;
@@ -129,16 +113,27 @@ input[type="text"].new {
   outline: none;
   transition: background-color 250ms ease-in-out;
 }
-.nextbtn:disabled {
+.nextbtn.disabled {
   opacity: 0.5;
   cursor: pointer;
+  background-color: #ac000021;
 }
-.nextbtn:hover:not(:disabled) {
+.nextbtn:hover:not(.disabled) {
   background-color: #00ac22;
 }
 .container {
   height: 35vh;
   overflow-y: auto;
+}
+.alerttxt {
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0;
+  min-height: 1.5em;
+  transition: opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.alerttxt:empty {
+  opacity: 0.5;
 }
 ::-webkit-scrollbar {
   background-color: #00e62e;

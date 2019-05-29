@@ -127,18 +127,18 @@ export default {
     data: function() {
         return {
             currentQuestion: {
-                text: "At je drankje.",
-                timer: 30
+                text: "",
+                timer: undefined
             },
-            time: 30,
-            database: {},
-            returning: []
+            time: undefined,
+            database: {}
         };
     },
     computed: {
         path: function() {
             return this.getPath(this.time || 1);
         },
+
         //a really large text parser.
         questionText: function() {
             let text = this.currentQuestion.text;
