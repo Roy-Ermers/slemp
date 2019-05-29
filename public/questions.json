@@ -23,105 +23,37 @@
 			"roze",
 			"paarse",
 			"grijze"
+		],
+		"body": [
+			"buik",
+			"rug",
+			"been",
+			"voet",
+			"kont",
+			"tepel",
+			"tong"
 		]
 	},
 	"questions": [
-		{
-			"text": "Iedereen die iets {colors} aan heeft neemt 2 slokken."
-		},
-		{
-			"text": "{person1} mag een vraag stellen aan {person2}, als {person2} weigert te antwoorden moet hij 5 slokken nemen."
-		},
-		{
-			"text": "De persoon die als eerst zijn mobiel pakt moet een atje doen."
-		},
 		{
 			"text": "{person} krijgt {time} sec om zijn bier te atten, lukt het niet drink 3 slokken, begin je er niet aan moet je 5 slokken drinken.",
 			"timer": 20,
 			"type": "timer"
 		},
 		{
-			"text": "Degene die {color} schoenen draagt mag 1 slok uitdelen."
-		},
-		{
-			"text": "{person1} en {person2} moeten tegelijk aanwijzen wie zij de slimste persoon in de kamer vinden, wijzen ze dezelfde persoon aan mogen ze allebei 2 slokken uitdelen, anders mogen ze er zelf 2 nemen."
-		},
-		{
-			"text": "{person} deelt 4 slokken uit aan de persoon die hij het minst goed kent."
-		},
-		{
-			"text": "{person} stelt een persoonlijke meerkeuze vraag, degene die hem niet juist kan beantwoorden mag 4 slokken nemen."
-		},
-		{
-			"text": "Degene die nog nooit later dan 6 uur s’ochtends is thuisgekomen van feesten moet 2 slokken nemen."
-		},
-		{
-			"text": "Degene die ooit al is iets gestolen heeft mag 2 slokken nemen,"
-		},
-		{
-			"text": "Degene die ooit drugs heeft gebruikt mag 3 slokken nemen."
-		},
-		{
-			"text": "{person} verteld 2 verschillende verhalen, 1 waarheid en 1 verzonnen, de andere moeten samen raden welk verhaal de waardheid is. Raden ze het goed, moet de verteller 3 slokken nemen, zo niet mag de rest 3 slokken nemen."
-		},
-		{
-			"text": "Alle meisjes nemen een slok."
-		},
-		{
-			"text": "Alle jongens nemen een slok."
-		},
-		{
-			"text": "Degene die al is heeft moeten overgeven van alcohol, drinkt 2 slokken."
-		},
-		{
-			"text": "Ieder persoon verteld om de beurt wat diegene nog nooit heeft gedaan, degene die het wel heeft gedaan, neemt een slok."
-		},
-		{
-			"text": "{person} doe 10 push-ups of drink 2 slokken."
-		},
-		{
-			"text": "{person} vertel een schaamtelijke gebeurtenis over jezelf of neem 5 slokken."
-		},
-		{
-			"text": "{person} zet een timer op 5 minuten, wanneer het alarm afgaat tikt iedereen zo snel mogelijk de grond, de laatste speler die de grond aan tikt mag zijn glas leegdrinken."
-		},
-		{
-			"text": "Iedere speler die jonger is dan 18 mag 2 slokken nemen."
-		},
-		{
-			"text": "Iedere speler die nog maagd is mag 3 slokken uitdelen."
-		},
-		{
-			"text": "Iedere speler die nog maagd is mag 3 slokken uitdelen."
-		},
-		{
-			"text": "Is je glas nog vol, dan is het tijd om te drinken!"
+			"text": "Is je glas nog vol, dan is het tijd om te drinken! Drink 3 slokken."
 		},
 		{
 			"text": "{person} doe de vis op het droge of drink 3 slokken."
 		},
 		{
-			"text": "{person} geef 5 slokken aan de persoon die jij het aantrekkelijkst vind."
-		},
-		{
-			"text": "De speler wie het meest is gedumpt tussen {person1} en {person2} moet 3 slokken drinken."
-		},
-		{
 			"text": "Wie op de raarste plek is wakker geworden mag 2 slokken uitdelen."
-		},
-		{
-			"text": "Neem het aantal slokken als het aantal paar schoenen die je hebt!"
 		},
 		{
 			"text": "{person} geeft een categorie, de laatste die niks meer weet in de categorie moet 4 slokken nemen."
 		},
 		{
-			"text": "{person} wij zijn benieuwd, laat je buik zien of drink 2 slokken."
-		},
-		{
-			"text": "{person1} en {person2} doen nu voor 30 sec een staarwedstrijd, wie wint mag 3 slokken uitdelen.",
-			"timer": 30,
-			"type": "timer"
+			"text": "{person} stop een bier flesje zo ver mogelijk in je mond of drink 3 slokken."
 		},
 		{
 			"start": "{person} is vanaf nu een zombie, wanneer diegene emotie toont moet hij of zij drinken.",
@@ -129,28 +61,18 @@
 			"type": "returning"
 		},
 		{
-			"text": "{person} wij zijn benieuwd, laat je buik zien of drink 2 slokken."
-		},
-		{
-			"text": "{person} krijgt 20 sec om zijn bier te atten, lukt het niet drink 3 slokken, begin je er niet aan 5 slokken drinken.",
-			"timer": 20,
-			"type": "timer"
-		},
-		{
-			"start": "{person} is de baas! Hij mag bepalen wie er een fitness oefening moet doen voor 30 seconde.",
-			"end": "{person} is niet meer de baas.",
-			"type": "returning"
+			"text": "{person} wij zijn benieuwd, laat je {body} zien of drink 2 slokken."
 		},
 		{
 			"text": "{person} ren rond als een gekke kalkoen of drink 3 slokken."
 		},
 		{
-			"text": "{person} belt het laatst gebelde nummer van zijn telefoon of drinkt 3 slokken."
-		},
-		{
 			"text": "{person} zing een lied voor 30 seconde of drink 5 slokken.",
 			"timer": 30,
 			"type": "timer"
+		},
+		{
+			"text": "Categorie: Eten waardoor je diarree krijgt. De eerste wie geen eten meer weet moet 3 slokken drinken."
 		}
 	]
 }

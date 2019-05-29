@@ -147,6 +147,7 @@ export default {
   color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
+
 @media screen and (max-width: 812px) {
   #app {
     justify-content: flex-start;
@@ -158,7 +159,6 @@ export default {
     max-width: calc(100% - 100px);
     box-sizing: border-box;
     object-fit: contain;
-    margin-top: 15vh;
   }
   .logo {
     pointer-events: none;
@@ -171,6 +171,32 @@ export default {
     transition-duration: 1ms;
     transform: initial;
     opacity: 1;
+  }
+  .install-prompt {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    position: fixed;
+    top: 0;
+    width: 75vw;
+    line-height: 2em;
+    left: 12.5vw;
+    text-align: left;
+    vertical-align: middle;
+    padding: 0.2em 1em;
+    box-sizing: border-box;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: top 250ms ease-in-out;
+    font-size: 15px;
+  }
+  .install-prompt button.primary {
+    background-color: #00e62e;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    margin: 0.25em;
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   }
 }
 </style>
