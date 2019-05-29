@@ -148,7 +148,7 @@
 			"text": "{person} belt het laatst gebelde nummer van zijn telefoon of drinkt 3 slokken."
 		},
 		{
-			"text": "{person} zing een lied voor 30 seconde of drink 5 slokken.",
+			"text": "{person} zing een lied voor 30 secondes of drink 5 slokken.",
 			"timer": 30,
 			"type": "timer"
 		}
