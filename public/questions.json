@@ -32,6 +32,9 @@
 			"kont",
 			"tepel",
 			"tong"
+		],
+		"category": [
+			"Eten waardoor je diarree krijgt. De eerste wie geen eten meer weet moet 3 slokken drinken.",
 		]
 	},
 	"questions": [
@@ -72,7 +75,7 @@
 			"type": "timer"
 		},
 		{
-			"text": "Categorie: Eten waardoor je diarree krijgt. De eerste wie geen eten meer weet moet 3 slokken drinken."
+			"text": "Categorie: {category}"
 		}
 	]
 }
